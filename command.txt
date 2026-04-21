@@ -1,0 +1,73 @@
+1. SYSTEM UPDATE (Target Machine)
+sudo apt update && sudo apt upgrade -y
+📡 2. CHECK NETWORK INTERFACE
+ip a
+
+ Note: eth0 / ens33
+
+ 3. INSTALL SNORT (IDS)
+sudo apt install snort -y
+
+
+ 4. CONFIGURE SNORT NETWORK
+sudo dpkg-reconfigure snort
+ Enter:192.168.1.0/24
+
+
+5. START SNORT (MONITOR MODE)
+sudo snort -A console -q -c /etc/snort/snort.conf -i eth0
+
+
+6. ADD CUSTOM RULE (ALERT SYSTEM)
+sudo nano /etc/snort/rules/local.rules
+Add:alert icmp any any -> any any (msg:"ICMP Ping Detected"; sid:1000001; rev:1;)
+Save:CTRL + X → Y → Enter
+
+
+ 7. RESTART SNORT
+sudo snort -A console -q -c /etc/snort/snort.conf -i eth0
+
+
+ 8. FIREWALL SETUP (IPTABLES)
+Flush old rules:sudo iptables -F
+
+Allow SSH + HTTP:
+sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+
+Block unsafe ports:
+sudo iptables -A INPUT -p tcp --dport 23 -j DROP
+sudo iptables -A INPUT -p tcp --dport 21 -j DROP
+
+Default block all:
+sudo iptables -A INPUT -j DROP
+
+Check rules:
+sudo iptables -L
+
+
+ 9. ATTACK SIMULATION (KALI MACHINE)
+Find target IP: ip a
+Ping attack: ping <target-ip>
+Port scan: nmap <target-ip>
+Service scan: nmap -sV <target-ip>
+
+
+ 10. SNIFF TRAFFIC (OPTIONAL)
+sudo tcpdump -i eth0
+
+
+ 11. CHECK SNORT ALERT LOGS
+cat /var/log/snort/alert
+
+
+ 12. TEST BLOCKED PORTS
+telnet <target-ip> 23
+ Should FAIL 
+
+
+ 13. SAVE IPTABLES RULES
+sudo apt install iptables-persistent -y
+sudo netfilter-persistent save
+🔁 14. RESTART NETWORK SERVICES (OPTIONAL)
+sudo systemctl restart networking
