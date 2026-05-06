@@ -111,7 +111,18 @@ Log Analysis & Alert Generation
 
 ## 📸 Screenshots
 
-![Firewall Rules](screenshots/firewall.png)
+![Firewall Rules](firewall.png)
+![Firewall Rules](firewall1.png)
+![Firewall Rules](firewall2.png)
+![Firewall Rules](firewall3.png)
+![Firewall Rules](firewall4.png)
+![Firewall Rules](firewall5.png)
+![IDS Alert](kali.png)
+![IDS Alert](kali1.png)
+![IDS Alert](kali2.png)
+![IDS Alert](kali3.png)
+![IDS Alert](kali4.png)
+![IDS Alert](kali5.png)
 
 ---
 
