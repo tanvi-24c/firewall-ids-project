@@ -2,29 +2,28 @@
 
 ## 📌 Overview
 
-This project demonstrates a **Firewall + Intrusion Detection System (IDS)** designed to monitor network traffic, detect malicious activities, and enforce security rules in a simulated environment. It is built for understanding real-world **SOC (Security Operations Center)** monitoring and network defense mechanisms.
+This project demonstrates a **Firewall + Intrusion Detection System (IDS) lab environment** designed to monitor network traffic, detect malicious activities, and enforce security controls in a simulated SOC (Security Operations Center) setup.
 
-The system simulates how enterprise security infrastructure detects and responds to cyber threats such as port scanning, brute-force attacks, and suspicious network behavior.
+It simulates real-world cyber defense scenarios such as port scanning, brute-force attacks, and suspicious network behavior detection using open-source security tools.
 
 ---
 
 ## 🎯 Objectives
 
-* Implement firewall-based network traffic filtering
-* Detect malicious activities using IDS techniques
+* Design and implement firewall-based network traffic filtering
+* Detect malicious activities using IDS concepts
 * Monitor and analyze network packets in real time
-* Simulate common cyberattacks in a controlled environment
-* Generate logs for security analysis and incident response
+* Simulate common cyberattacks in a controlled lab environment
+* Generate logs for incident response and security analysis
 
 ---
 
-## 🛠 Tools & Technologies Used
+## 🛠 Tools & Technologies
 
 * Kali Linux (Attack simulation environment)
 * Firewall (iptables / system firewall rules)
-* IDS concepts (rule-based detection)
 * Wireshark (Packet analysis)
-* Nmap (Port scanning simulation)
+* Nmap (Network scanning & reconnaissance)
 * Hydra (Brute force attack simulation)
 * Log monitoring tools
 
@@ -39,9 +38,9 @@ Network Traffic (Simulated Attacks)
         ↓
 Firewall Layer (Traffic Filtering Rules)
         ↓
-IDS Engine (Traffic Monitoring & Detection)
+IDS Monitoring Layer (Detection & Analysis)
         ↓
-Log Analysis & Alert Generation
+Log Generation & Alert System
 ```
 
 ---
@@ -50,61 +49,61 @@ Log Analysis & Alert Generation
 
 ### 1. Firewall Configuration
 
-* Configured firewall rules to allow/deny specific traffic
-* Blocked suspicious IP addresses and ports
+* Configured firewall rules to allow/deny specific ports and traffic
+* Blocked suspicious IP addresses and unauthorized access attempts
 
-### 2. Traffic Monitoring
+### 2. Network Monitoring
 
-* Captured network packets using Wireshark
-* Analyzed incoming and outgoing traffic patterns
+* Captured live packets using Wireshark
+* Analyzed inbound and outbound network traffic patterns
 
 ### 3. Intrusion Detection
 
-* Identified abnormal network behavior
-* Detected repeated login attempts and port scans
+* Identified abnormal network behavior patterns
+* Detected repeated authentication failures and scanning activity
 
 ### 4. Attack Simulation
 
-* Performed controlled attacks using:
+Performed controlled attacks in a lab environment:
 
-  * Nmap (Port scanning)
-  * Hydra (Brute force login attempts)
+* Port Scanning using Nmap
+* Brute Force Login attempts using Hydra
 
 ### 5. Logging & Analysis
 
-* Generated logs for all network events
-* Analyzed attack patterns and system response
+* Generated system logs for all network activities
+* Analyzed logs to identify attack patterns and anomalies
 
 ---
 
-## 🚨 Attack Scenarios Simulated
+## 🚨 Attack Scenarios
 
 ### 🔍 1. Port Scanning Attack
 
-* Tool Used: Nmap
-* Objective: Identify open ports and services
-* Detection: Firewall/IDS flagged multiple connection attempts
+* Tool: Nmap
+* Purpose: Identify open ports and exposed services
+* Result: Multiple scan attempts detected and logged by firewall/IDS layer
 
 ### 🔐 2. Brute Force Attack
 
-* Tool Used: Hydra
-* Objective: Attempt multiple login credentials
-* Detection: Repeated failed login attempts logged and flagged
+* Tool: Hydra
+* Purpose: Attempt multiple login credentials
+* Result: Repeated failed login attempts detected and flagged
 
-### 📡 3. Suspicious Traffic Monitoring
+### 📡 3. Traffic Analysis
 
-* Tool Used: Wireshark
-* Objective: Analyze abnormal packet flow
-* Detection: Unusual traffic patterns identified
+* Tool: Wireshark
+* Purpose: Inspect packet-level network behavior
+* Result: Suspicious traffic patterns identified
 
 ---
 
 ## 📊 Key Features
 
-* Real-time network monitoring
-* Rule-based intrusion detection
+* Real-time network traffic monitoring
 * Firewall-based access control
-* Attack simulation environment
+* Intrusion detection simulation
+* Attack scenario testing environment
 * Log-based security analysis
 
 ---
@@ -128,17 +127,25 @@ Log Analysis & Alert Generation
 
 ## 📚 Key Learnings
 
-* Understanding of network security fundamentals
-* Hands-on experience with firewall configuration
-* IDS detection techniques and log analysis
-* Practical exposure to cyber attack simulation
-* Improved understanding of SOC workflows
+* Fundamentals of network security and defense mechanisms
+* Firewall rule configuration and traffic filtering
+* Intrusion detection and log analysis techniques
+* Hands-on experience with cyberattack simulation
+* Understanding SOC workflow and incident response basics
+
+---
+
+## 📈 Security Mapping (Advanced)
+
+* Port Scanning → Reconnaissance phase (MITRE ATT&CK)
+* Brute Force → Credential Access (T1110)
+* Traffic Analysis → Network Monitoring & Detection
 
 ---
 
 ## ⚠️ Disclaimer
 
-This project is developed strictly for **educational and learning purposes only** in a controlled lab environment. No real-world systems were targeted or harmed.
+This project is developed strictly for **educational purposes only** in a controlled lab environment. No real-world systems were targeted or harmed.
 
 ---
 
@@ -149,9 +156,9 @@ Cybersecurity Student | SOC & Pentesting Enthusiast
 
 ---
 
-## 🚀 Future Improvements
+## 🚀 Future Enhancements
 
-* Integration with SIEM tools (Splunk / ELK)
+* Integration with SIEM tools (Splunk / ELK Stack)
+* Automated alerting system
 * Machine Learning-based anomaly detection
-* Automated alert system
-* Advanced threat intelligence mapping (MITRE ATT&CK)
+* Advanced threat intelligence integration
